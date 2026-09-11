@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lollipop's Lookbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./assets/favicon.png">
+</head>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo">Lollipop's Lookbook</a>
+            <nav class="site-nav">
+                <a href="#collection">Collection</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+<body>
+    <section class="hero">
+        <p class="hero-eyebrow">Spring / Summer 2026</p>
+            <h1 class="hero-title">The Quiet Hour</h1>
+                <p class="hero-copy">Five ways to dress the same story — browse by mood, not by season.</p>
+    </section>
+
+    <section class="collection" id="collection">
+        <article class="outfit-card" data-category="vintage">
+        <div class="outfit-image">
+          <span class="placeholder-label">Vintage</span>
+        </div>
+        <div class="outfit-caption">
+          <span class="outfit-name">Vintage</span>
+        </div>
+      </article>
+
+      <article class="outfit-card" data-category="formal">
+        <div class="outfit-image">
+          <span class="placeholder-label">Formal</span>
+        </div>
+        <div class="outfit-caption">
+          <span class="outfit-name">Formal</span>
+        </div>
+      </article>
+
+      <article class="outfit-card" data-category="casual">
+        <div class="outfit-image">
+          <span class="placeholder-label">Casual</span>
+        </div>
+        <div class="outfit-caption">
+          <span class="outfit-name">Casual</span>
+        </div>
+      </article>
+
+      <article class="outfit-card" data-category="streetwear">
+        <div class="outfit-image">
+          <span class="placeholder-label">Streetwear</span>
+        </div>
+        <div class="outfit-caption">
+          <span class="outfit-name">Streetwear</span>
+        </div>
+      </article>
+
+      <article class="outfit-card" data-category="evening">
+        <div class="outfit-image">
+          <span class="placeholder-label">Evening</span>
+        </div>
+        <div class="outfit-caption">
+          <span class="outfit-name">Evening</span>
+        </div>
+      </article>
+    </section>
+
+
+
+
+<div class="lookbook-overlay" id="lookbookOverlay">
+    <button class="overlay-close" id="overlayClose" aria-label="Close">&times;</button>
+    <div class="overlay-content">
+      <div class="overlay-image">
+        <span class="placeholder-label" id="overlayImageLabel">Vintage</span>
+      </div>
+      <div class="overlay-info">
+        <h2 class="overlay-name" id="overlayName">Vintage</h2>
+      </div>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
