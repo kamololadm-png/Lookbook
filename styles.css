@@ -311,11 +311,38 @@ body {
   position: relative;
 }
 
-/* ─── Individual look items ─── */
+/* ─── Individual look items ─── *
 .look-item {
   display: flex;
   flex-direction: column;
   gap: var(--sp-xs);
+}*/
+
+.look-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+}
+
+.look-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(26, 24, 20, 0.55); /* dark tint using your --ink color */
+  color: #f5f3ef; /* your --bg color, for contrast against the dark tint */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.look-link:hover .look-overlay {
+  opacity: 1;
 }
 
 .look-img {
