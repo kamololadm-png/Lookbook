@@ -1,94 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lollipop's Lookbook</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="./assets/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lollipop's Lookbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
 </head>
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="#" class="logo">Lollipop's Lookbook</a>
-            <nav class="site-nav">
-                <a href="#collection">Collection</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
 <body>
-    <section class="hero">
-        <p class="hero-eyebrow">Spring / Summer 2026</p>
-            <h1 class="hero-title">The Quiet Hour</h1>
-                <p class="hero-copy">Five ways to dress the same story — browse by mood, not by season.</p>
-    </section>
 
-    <section class="collection" id="collection">
-        <article class="outfit-card" data-category="vintage">
-        <div class="outfit-image">
-          <span class="placeholder-label">Vintage</span>
-        </div>
-        <div class="outfit-caption">
-          <span class="outfit-name">Vintage</span>
-        </div>
-      </article>
+  <!-- ───────────── HEADER ───────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="header-meta">2026</span>
+      <a href="#" class="logo">LOLLIPOP</a>
+      <nav class="site-nav">
+        <a href="#looks">Looks</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
 
-      <article class="outfit-card" data-category="formal">
-        <div class="outfit-image">
-          <span class="placeholder-label">Formal</span>
-        </div>
-        <div class="outfit-caption">
-          <span class="outfit-name">Formal</span>
-        </div>
-      </article>
-
-      <article class="outfit-card" data-category="casual">
-        <div class="outfit-image">
-          <span class="placeholder-label">Casual</span>
-        </div>
-        <div class="outfit-caption">
-          <span class="outfit-name">Casual</span>
-        </div>
-      </article>
-
-      <article class="outfit-card" data-category="streetwear">
-        <div class="outfit-image">
-          <span class="placeholder-label">Streetwear</span>
-        </div>
-        <div class="outfit-caption">
-          <span class="outfit-name">Streetwear</span>
-        </div>
-      </article>
-
-      <article class="outfit-card" data-category="evening">
-        <div class="outfit-image">
-          <span class="placeholder-label">Evening</span>
-        </div>
-        <div class="outfit-caption">
-          <span class="outfit-name">Evening</span>
-        </div>
-      </article>
-    </section>
-
-
-
-
-<div class="lookbook-overlay" id="lookbookOverlay">
-    <button class="overlay-close" id="overlayClose" aria-label="Close">&times;</button>
-    <div class="overlay-content">
-      <div class="overlay-image">
-        <span class="placeholder-label" id="overlayImageLabel">Vintage</span>
-      </div>
-      <div class="overlay-info">
-        <h2 class="overlay-name" id="overlayName">Vintage</h2>
-      </div>
+  <!-- ───────────── TICKER ───────────── -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
     </div>
   </div>
 
-    <script src="script.js"></script>
+  <!-- ───────────── HERO ───────────── -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Fashion / Modeling Journey</p>
+      <h1 class="hero-title">The<br><em>Quiet</em><br>Hour</h1>
+      <p class="hero-copy">
+        Lollipop — who presses herself all she wants to create, to be vivid. 
+        She finds her own way, and she knows how to find her own fun.
+      </p>
+      <div class="hero-meta-row">
+        <span>2026</span>
+        <span>&lt; SPRING &gt;</span>
+        <span>LOLLIPOP</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Large hero image placeholder -->
+      <div class="hero-img-main img-placeholder">
+        <span class="img-hint">Your hero photo here</span>
+      </div>
+      <!-- Smaller thumbnail strip -->
+      <div class="hero-thumbs">
+        <div class="hero-thumb img-placeholder"><span class="img-hint">Look 1</span></div>
+        <div class="hero-thumb img-placeholder"><span class="img-hint">Look 2</span></div>
+        <div class="hero-thumb img-placeholder"><span class="img-hint">Look 3</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── SECOND TICKER ───────────── -->
+  <div class="ticker-wrap ticker-dark" aria-hidden="true">
+    <div class="ticker-track">
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+      <span>LOLLIPOP 2026 &lt; SPRING &gt; LOOK /&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ───────────── SCATTERED LOOKS ───────────── -->
+  <section class="looks-section" id="looks">
+
+    <div class="looks-header">
+      <p class="section-label">The Collection</p>
+      <h2 class="section-title"><em>Five Ways to<br>Dress the Story</em></h2>
+    </div>
+
+    <!-- Scattered outfit grid -->
+    <div class="scatter-grid">
+
+      <article class="look-item look-1" data-num="1">
+        <div class="look-img img-placeholder">
+          <span class="img-hint">Vintage look photo</span>
+        </div>
+        <div class="look-caption">
+          <span class="look-number">(1)</span>
+          <span class="look-name">Vintage</span>
+        </div>
+      </article>
+
+      <article class="look-item look-2" data-num="2">
+        <div class="look-img img-placeholder">
+          <span class="img-hint">Casual look photo</span>
+        </div>
+        <div class="look-caption">
+          <span class="look-number">(2)</span>
+          <span class="look-name">Casual</span>
+        </div>
+      </article>
+
+      <article class="look-item look-3" data-num="3">
+        <div class="look-img img-placeholder">
+          <span class="img-hint">Streetwear photo</span>
+        </div>
+        <div class="look-caption">
+          <span class="look-number">(3)</span>
+          <span class="look-name">Streetwear</span>
+        </div>
+      </article>
+
+      <!-- Floating editorial quote in the middle of the grid -->
+      <div class="scatter-quote">
+        <p>
+          "Lollipop girls will not be confused by seasons — only exquisite but actually hollow trends. Because they know that true fashion is self-expression from within."
+        </p>
+        <span class="scatter-quote-meta">— 2026 Spring Editorial</span>
+      </div>
+
+      <article class="look-item look-4" data-num="4">
+        <div class="look-img img-placeholder">
+          <span class="img-hint">Formal look photo</span>
+        </div>
+        <div class="look-caption">
+          <span class="look-number">(4)</span>
+          <span class="look-name">Formal</span>
+        </div>
+      </article>
+
+      <article class="look-item look-5" data-num="5">
+        <div class="look-img img-placeholder">
+          <span class="img-hint">Evening look photo</span>
+        </div>
+        <div class="look-caption">
+          <span class="look-number">(5)</span>
+          <span class="look-name">Evening</span>
+        </div>
+      </article>
+
+    </div><!-- /scatter-grid -->
+  </section>
+
+  <!-- ───────────── ABOUT ───────────── -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-label">About</p>
+        <h2 class="about-title"><em>Who is<br>Lollipop?</em></h2>
+        <p class="about-body">
+          Lollipop — who presses herself all she wants to make, 
+          to be vivid. She finds her own way to work, become 
+          a true artist in her daily life, and knows how to find her own fun.
+        </p>
+        <p class="about-body">
+          Lollipop girls will not be confused by seasonal trends. 
+          Choosing what kind of clothes to wear reflects an attitude 
+          towards life — we hope you too carry curiosity and a 
+          desire to explore the world.
+        </p>
+      </div>
+      <div class="about-img-stack">
+        <div class="about-img-large img-placeholder">
+          <span class="img-hint">Editorial photo</span>
+        </div>
+        <div class="about-img-small img-placeholder">
+          <span class="img-hint">Detail shot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── FOOTER ───────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">LOLLIPOP</span>
+      <span class="footer-meta">Spring / Summer 2026</span>
+      <span class="footer-copy">&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
