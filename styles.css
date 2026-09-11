@@ -116,9 +116,9 @@ body {
   background: var(--bg);
 }
 
-.ticker-wrap.ticker-dark {
+/*.ticker-wrap.ticker-dark {
   background: var(--ink);
-  border-color: var(--ink);
+  border-color: var(--ink);*/
 }
 
 .ticker-track {
