@@ -1,0 +1,255 @@
+/* ══════════════════════════════════════════
+   VINTAGE — HORIZONTAL FILMSTRIP GALLERY
+══════════════════════════════════════════ */
+
+.vintage-body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fdfdfb;
+}
+
+/* ─── Header ─── */
+.film-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+}
+
+.film-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+.film-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.film-title-main {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.film-title-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+  margin-top: 0.2rem;
+}
+
+.film-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.film-nav a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+  transition: color 0.2s;
+}
+
+.film-nav a:hover { color: var(--ink); }
+
+/* ─── Filmstrip ─── */
+.filmstrip-viewport {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  cursor: default;
+  position: relative;
+}
+
+.filmstrip-viewport::-webkit-scrollbar { display: none; }
+
+.filmstrip-viewport.is-dragging { cursor: grabbing; }
+
+.filmstrip-track {
+  display: flex;
+  height: 100%;
+  width: max-content;
+}
+
+.frame {
+  position: relative;
+  height: 100%;
+  flex: 0 0 auto;
+  border-right: 1px solid var(--border);
+}
+
+.frame img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.frame-zoom-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(26, 24, 20, 0.85);
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.vintage-body.zoom-on .frame:hover .frame-zoom-label {
+  opacity: 1;
+}
+
+.vintage-body.zoom-on .frame:hover {
+  cursor: zoom-in;
+}
+
+/* ─── Status bar ─── */
+.status-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 2rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  border-top: 1px solid var(--border);
+}
+
+.status-item {
+  color: var(--ink-light);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.status-item span { color: var(--ink); }
+
+.status-item:hover { color: var(--ink); }
+
+.status-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.frame-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3;
+}
+
+#frameCurrent {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.15rem;
+}
+
+#frameTotal { color: var(--ink-light); }
+
+/* ─── Ruler / scrub bar ─── */
+.ruler-wrap {
+  position: relative;
+  flex-shrink: 0;
+  height: 34px;
+  border-top: 1px solid var(--border);
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--border) 0,
+    var(--border) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+}
+
+.ruler-indicator {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #c0392b;
+  transform: translateX(-50%);
+}
+
+/* ─── Zoom lightbox ─── */
+.frame-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 300;
+}
+
+.frame-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.frame-lightbox img {
+  max-height: 90vh;
+  max-width: 90vw;
+  object-fit: contain;
+}
+
+.frame-lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 720px) {
+  .film-header {
+    padding: 1rem;
+  }
+  .film-nav {
+    gap: 0.75rem;
+  }
+  .film-nav a {
+    font-size: 0.6rem;
+  }
+  .status-bar {
+    padding: 0.75rem 1rem;
+    font-size: 0.6rem;
+  }
+  .status-right {
+    gap: 0.75rem;
+  }
+}
