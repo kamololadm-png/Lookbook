@@ -3,23 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lollipop's Lookbook</title>
+  <title>Vintage — Lollipop's Lookbook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./vintage.css">
   <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
 </head>
-<body>
+<body class="vintage-body">
 
-<!-- ───────────── FOOTER ───────────── -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span class="footer-logo">LOLLIPOP</span>
-      <span class="footer-meta">Spring / Summer 2026</span>
-      <span class="footer-copy">&copy; 2026</span>
+  <!-- ───────────── HEADER ───────────── -->
+  <header class="film-header">
+    <a href="index.html" class="film-logo">LOLLIPOP<sup>&reg;</sup></a>
+    <div class="film-title">
+      <span class="film-title-main">VINTAGE</span>
+      <span class="film-title-sub">SPRING 2026</span>
     </div>
-  </footer>
+    <nav class="film-nav">
+      <a href="index.html#looks">LOOKS(05)</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#looks">CONTACT</a>
+    </nav>
+  </header>
 
-  <script src="script.js"></script>
+  <!-- ───────────── FILMSTRIP ───────────── -->
+  <main class="filmstrip-viewport" id="filmstripViewport">
+    <div class="filmstrip-track" id="filmstripTrack">
+
+      <div class="frame">
+        <img src="./assets/vintage-1.jpg" alt="Vintage look 1">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+      <div class="frame">
+        <img src="./assets/vintage-2.jpg" alt="Vintage look 2">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+      <div class="frame">
+        <img src="./assets/vintage-3.jpg" alt="Vintage look 3">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+      <div class="frame">
+        <img src="./assets/vintage-4.jpg" alt="Vintage look 4">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+      <div class="frame">
+        <img src="./assets/vintage-5.jpg" alt="Vintage look 5">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+      <div class="frame">
+        <img src="./assets/vintage-6.jpg" alt="Vintage look 6">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+      <div class="frame">
+        <img src="./assets/vintage-7.jpg" alt="Vintage look 7">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+      <div class="frame">
+        <img src="./assets/vintage-8.jpg" alt="Vintage look 8">
+        <span class="frame-zoom-label">ZOOM IN</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ───────────── STATUS BAR ───────────── -->
+  <div class="status-bar">
+    <span class="status-item" id="zoomToggle">ZOOM:<span>[OFF]</span></span>
+
+    <div class="frame-counter">
+      <span id="frameCurrent">01</span>
+      <span id="frameTotal">08</span>
+    </div>
+
+    <div class="status-right">
+      <span class="status-item" id="soundToggle">SOUND:<span>[ON]</span></span>
+      <span class="status-item" id="gesturesToggle">GESTURES:<span>[OFF]</span></span>
+    </div>
+  </div>
+
+  <!-- ───────────── RULER / SCRUB BAR ───────────── -->
+  <div class="ruler-wrap">
+    <div class="ruler-indicator" id="rulerIndicator"></div>
+  </div>
+
+  <!-- ───────────── ZOOM LIGHTBOX ───────────── -->
+  <div class="frame-lightbox" id="frameLightbox">
+    <button class="frame-lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script src="vintage.js"></script>
 </body>
 </html>

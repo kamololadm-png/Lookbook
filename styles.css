@@ -311,12 +311,12 @@ body {
   position: relative;
 }
 
-/* ─── Individual look items ─── *
+/* ─── Individual look items ─── */
 .look-item {
   display: flex;
   flex-direction: column;
   gap: var(--sp-xs);
-}*/
+}
 
 .look-link {
   display: flex;
@@ -403,6 +403,7 @@ body {
   justify-content: center;
   gap: var(--sp-sm);
   padding: var(--sp-md) 0;
+  color: var(--ink);
 }
 
 .scatter-quote p {
@@ -410,7 +411,7 @@ body {
   font-style: italic;
   font-size: clamp(0.85rem, 1.4vw, 1.1rem);
   line-height: 1.65;
-  color: var(--ink-muted);
+  color: f2f1e9; /* slightly lighter than --ink for contrast */
 }
 
 .scatter-quote-meta {
@@ -569,6 +570,137 @@ body {
     grid-template-columns: 1fr;
     gap: var(--sp-lg);
   }
+}
+
+/* ══════════════════════════════════════════
+   CATEGORY PAGE
+══════════════════════════════════════════ */
+.category-hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--sp-xl) 2rem var(--sp-lg);
+}
+.back-link {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: var(--sp-lg);
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--ink); }
+.category-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: var(--sp-sm);
+}
+.category-copy {
+  color: var(--ink-muted);
+  max-width: 50ch;
+  font-size: 0.9rem;
+}
+
+/* Polaroid photo grid */
+.polaroid-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem var(--sp-xl);
+}
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg) var(--sp-md);
+}
+.polaroid-card {
+  background: #fff;
+  padding: var(--sp-sm) var(--sp-sm) var(--sp-md);
+  box-shadow: 0 12px 28px rgba(26, 24, 20, 0.15);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.polaroid-card:nth-child(3n+1) { transform: rotate(-1.5deg); }
+.polaroid-card:nth-child(3n+2) { transform: rotate(1deg); }
+.polaroid-card:nth-child(3n)   { transform: rotate(-0.8deg); }
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.03);
+  z-index: 2;
+}
+.polaroid-clip {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-6deg);
+  font-size: 1.7rem;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.25));
+  pointer-events: none;
+}
+.polaroid-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--bg-alt);
+  overflow: hidden;
+}
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lightbox overlay (category pages) */
+.lookbook-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 24, 20, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 200;
+}
+.lookbook-overlay.is-open { opacity: 1; visibility: visible; }
+.overlay-content {
+  max-width: 420px;
+  padding: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+}
+.overlay-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--bg-alt);
+  overflow: hidden;
+}
+.overlay-image img { width: 100%; height: 100%; object-fit: cover; }
+.overlay-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--bg);
+}
+.overlay-close {
+  position: absolute;
+  top: var(--sp-lg);
+  right: var(--sp-lg);
+  background: none;
+  border: none;
+  color: var(--bg);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .polaroid-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .polaroid-grid { grid-template-columns: 1fr; }
 }
 
 /* Mobile */
