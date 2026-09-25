@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./casual.css">
   <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
 </head>
 <body>
@@ -23,51 +24,38 @@
     </nav>
   </header>
 
-  <main class="filmstrip-viewport" id="filmstripViewport">
-    <div class="filmstrip-track" id="filmstripTrack">
+    <main class="gallery">
 
-      <div class="frame">
-        <img src="./assets/vintage1.jpg" alt="Vintage look 1">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+        <img src="./assets/Casual 1.jpg" alt="">
+        <img src="./assets/Casual 2.jpg" alt="">
+        <img src="./assets/Casual 3.jpg" alt="">
+        <img src="./assets/Casual 4.jpg" alt="">
 
-      <div class="frame">
-        <img src="./assets/vintage2.jpg" alt="Vintage look 2">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+        <img src="./assets/Casual 5.jpg" alt="">
+        <img src="images/photo6.jpg" alt="">
+        <img src="images/photo7.jpg" alt="">
+        <img src="images/photo8.jpg" alt="">
 
-      <div class="frame">
-        <img src="./assets/vintage3.jpg" alt="Vintage look 3">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+        <img src="images/photo9.jpg" alt="">
+        <img src="images/photo10.jpg" alt="">
+        <img src="images/photo11.jpg" alt="">
+        <img src="images/photo12.jpg" alt="">
 
-      <div class="frame">
-        <img src="./assets/vintage4.jpg" alt="Vintage look 4">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+        <img src="images/photo13.jpg" alt="">
+        <img src="images/photo14.jpg" alt="">
+        <img src="images/photo15.jpg" alt="">
+        <img src="images/photo16.jpg" alt="">
 
-      <div class="frame">
-        <img src="./assets/vintage5.jpg" alt="Vintage look 5">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+    </main>
 
-      <div class="frame">
-        <img src="./assets/vintage6.jpg" alt="Vintage look 6">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+     <!-- Zoom overlay -->
+    <div class="lightbox" id="lightbox">
 
-      <div class="frame">
-        <img src="./assets/vintage7.jpg" alt="Vintage look 7">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+        <button class="close" id="close">&times;</button>
 
-      <div class="frame">
-        <img src="./assets/vintage8.jpg" alt="Vintage look 8">
-        <span class="frame-zoom-label">ZOOM IN</span>
-      </div>
+        <img id="zoomedImage" src="" alt="">
 
     </div>
-  </main>
 
 <!-- ───────────── FOOTER ───────────── -->
   <footer class="site-footer">
