@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('frameLightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
+  const shutterSound = new Audio('./assets/shutter.mp3');
 
   frameTotal.textContent = String(frames.length).padStart(2, '0');
 
