@@ -1,0 +1,137 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & THEME
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212; /* Dark moody background */
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.05em;
+  padding: 3rem 1.5rem;
+}
+
+.lookbook-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.lookbook-header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.lookbook-header p {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   2. LOOKBOOK GRID ARCHITECTURE
+   ========================================================================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Base grid item container settings */
+.grid-item {
+  position: relative;
+  background-color: #1a1a1a;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images crop nicely without warping */
+  filter: grayscale(30%) contrast(110%); /* Matches the desaturated mood board look */
+  transition: filter 0.4s ease;
+}
+
+/* Grid layout variations to replicate the staggered mood board */
+.grid-item.item-tall {
+  grid-row: span 2;
+}
+
+.grid-item.item-wide {
+  grid-column: span 2;
+}
+
+.grid-item.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ==========================================================================
+   3. INTERACTIVE HOVER EFFECTS
+   ========================================================================== */
+.grid-item:hover {
+  transform: scale(1.02);
+}
+
+.grid-item:hover img {
+  filter: grayscale(0%) contrast(100%);
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-overlay a {
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hover-overlay a:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ==========================================================================
+   4. RESPONSIVE DESIGN (Mobile adjustments)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack items vertically on mobile */
+    grid-auto-rows: auto;
+  }
+  
+  .grid-item.item-tall,
+  .grid-item.item-wide,
+  .grid-item.item-large {
+    grid-column: auto;
+    grid-row: auto;
+    height: 400px; /* Standard fallback height on small screens */
+  }
+}
