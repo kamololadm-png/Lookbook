@@ -9,33 +9,60 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-
-header {
-    padding: 10px 0;
+/* ─── Header ─── */
+.film-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
 }
 
-.logo {
-    font-family: serif;
-    font-size: 16px;
-    letter-spacing: 4px;
+.film-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ink);
 }
 
-.logo sup {
-    font-size: 7px;
+.film-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-nav {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
+.film-title-main {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--ink);
 }
 
-nav a {
-    color: black;
-    text-decoration: none;
-    font-size: 12px;
+.film-title-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+  margin-top: 0.2rem;
 }
+
+.film-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.film-nav a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+  transition: color 0.2s;
+}
+
+.film-nav a:hover { color: var(--ink); }
 
 .gallery {
     width: 90vw;
