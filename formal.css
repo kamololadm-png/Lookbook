@@ -52,15 +52,34 @@
   padding: 0 2rem var(--sp-xl);
 }
 
+/* ══════════ CARD GRID ══════════ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-md) var(--sp-sm);
+}
+
+@media (max-width: 1100px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 800px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+
 /* ══════════ LOOK CARD ══════════ */
 .look-card {
   position: relative;
   width: 100%;
-  max-width: 420px;          /* temporary, the grid takes over in step 5 */
   aspect-ratio: 5 / 6;
   border-radius: 24px;
   overflow: hidden;
   background: #2a2927;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Layer 1: big zoomed-in photo behind everything */
@@ -72,6 +91,8 @@
   object-fit: cover;
   object-position: center 30%;
   transform: scale(1.8);
+  transition: transform 0.35s ease;
+  cursor: zoom-in;
 }
 
 /* Layers 2 and 3: the white "browser windows" */
@@ -83,6 +104,10 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  cursor: zoom-in;
+  transition: top 0.35s ease, left 0.35s ease,
+              width 0.35s ease, height 0.35s ease,
+              box-shadow 0.35s ease;
 }
 
 .window img {
@@ -131,19 +156,6 @@
 
 /* ══════════ HOVER: SHOW FULL PICTURE ══════════ */
 
-/* Make the windows and background animate smoothly */
-.window {
-  transition: top 0.35s ease, left 0.35s ease,
-              width 0.35s ease, height 0.35s ease,
-              box-shadow 0.35s ease;
-  cursor: zoom-in;
-}
-
-.card-bg {
-  transition: transform 0.35s ease;
-  cursor: zoom-in;
-}
-
 /* Hovering a window: it grows to fill most of the card, showing the whole photo */
 .window:hover {
   top: 4%;
@@ -168,10 +180,6 @@
 }
 
 /* ══════════ HOVER: LIFT THE WHOLE CARD ══════════ */
-.look-card {
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
 .look-card:hover {
   z-index: 10;
   transform: scale(1.06);
