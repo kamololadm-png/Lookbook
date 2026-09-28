@@ -1,0 +1,53 @@
+/* ══════════ FORMAL PAGE ══════════ */
+.formal-body {
+  background-color: #1e1d1c;
+  color: var(--bg);
+}
+
+.formal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+.formal-logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  color: var(--bg);
+}
+
+.formal-back {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  transition: color 0.2s;
+}
+
+.formal-back:hover { color: var(--bg); }
+
+.formal-hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--sp-lg) 2rem var(--sp-lg);
+}
+
+.formal-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  margin: var(--sp-sm) 0;
+}
+
+.formal-copy {
+  color: var(--ink-light);
+  max-width: 46ch;
+}
+
+.formal-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem var(--sp-xl);
+}
