@@ -128,3 +128,52 @@
   border-radius: 50%;
   background: #a9a9a6;
 }
+
+/* ══════════ HOVER: SHOW FULL PICTURE ══════════ */
+
+/* Make the windows and background animate smoothly */
+.window {
+  transition: top 0.35s ease, left 0.35s ease,
+              width 0.35s ease, height 0.35s ease,
+              box-shadow 0.35s ease;
+  cursor: zoom-in;
+}
+
+.card-bg {
+  transition: transform 0.35s ease;
+  cursor: zoom-in;
+}
+
+/* Hovering a window: it grows to fill most of the card, showing the whole photo */
+.window:hover {
+  top: 4%;
+  left: 8%;
+  width: 84%;
+  height: 92%;
+  z-index: 5;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.window:hover img {
+  object-fit: contain;
+  object-position: center;
+  background: #f4f4f2;
+}
+
+/* Hovering the big background: it un-zooms to show the whole photo */
+.card-bg:hover {
+  transform: scale(1);
+  object-fit: contain;
+  background: #2a2927;
+}
+
+/* ══════════ HOVER: LIFT THE WHOLE CARD ══════════ */
+.look-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.look-card:hover {
+  z-index: 10;
+  transform: scale(1.06);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
