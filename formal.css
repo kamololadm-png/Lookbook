@@ -176,7 +176,7 @@
 .card-bg:hover {
   transform: scale(1);
   object-fit: contain;
-  background: #46433d;
+  background: #e9e5de;
 }
 
 /* ══════════ HOVER: LIFT THE WHOLE CARD ══════════ */
