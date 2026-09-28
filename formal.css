@@ -78,7 +78,7 @@
   aspect-ratio: 5 / 6;
   border-radius: 24px;
   overflow: hidden;
-  background: #2a2927;
+  background: #f5f3ef;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -176,7 +176,7 @@
 .card-bg:hover {
   transform: scale(1);
   object-fit: contain;
-  background: #2a2927;
+  background: #46433d;
 }
 
 /* ══════════ HOVER: LIFT THE WHOLE CARD ══════════ */
