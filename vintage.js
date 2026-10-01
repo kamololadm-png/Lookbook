@@ -12,7 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('frameLightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
-  const shutterSound = new Audio('./assets/shutter.mp3');
+
+  // ── Camera sound ──
+  const shutterSound = new Audio('./assets/camera-shutter.wav');
+  shutterSound.preload = 'auto';
+  const SHUTTER_MS = 700;   // how long the sound plays on each new frame (milliseconds)
+  let stopTimer;
+
+  function playShutter() {
+    clearTimeout(stopTimer);
+    shutterSound.currentTime = 0;
+    shutterSound.play().catch(() => {});   // ignore the error if the browser blocks it
+    stopTimer = setTimeout(() => shutterSound.pause(), SHUTTER_MS);
+  }
 
   frameTotal.textContent = String(frames.length).padStart(2, '0');
 
@@ -25,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: false });
 
   // ── Update frame counter + ruler indicator as you scroll ──
+  let lastFrameIndex = 0;   // remembers which frame we were on last time
+
   function updateProgress() {
     const maxScroll = viewport.scrollWidth - viewport.clientWidth;
     const progress = maxScroll > 0 ? viewport.scrollLeft / maxScroll : 0;
@@ -42,6 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     frameCurrent.textContent = String(closestIndex + 1).padStart(2, '0');
+
+    // Play the camera sound only when we land on a NEW frame, and only if SOUND is ON
+    if (closestIndex !== lastFrameIndex) {
+      lastFrameIndex = closestIndex;
+      const soundIsOn = soundToggle.querySelector('span').textContent === '[ON]';
+      if (soundIsOn) playShutter();
+    }
   }
   viewport.addEventListener('scroll', updateProgress);
   updateProgress();
@@ -76,11 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
     zoomToggle.querySelector('span').textContent = on ? '[ON]' : '[OFF]';
   });
 
-  // ── SOUND toggle (visual state only) ──
+  // ── SOUND toggle: turns the camera sound on/off ──
   soundToggle.addEventListener('click', () => {
     const span = soundToggle.querySelector('span');
     const isOn = span.textContent === '[ON]';
     span.textContent = isOn ? '[OFF]' : '[ON]';
+    if (isOn) {
+      clearTimeout(stopTimer);
+      shutterSound.pause();
+    }
   });
 
   // ── GESTURES toggle: enables/disables click-and-drag panning ──
